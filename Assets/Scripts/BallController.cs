@@ -13,10 +13,16 @@ public class BallControl : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         rig.velocity = speed;
+        Debug.Log($"Ball Speed: {rig.velocity}");
     }
 
     public void ResetBall()
     {
         transform.position = new Vector3(resetPosition.x, resetPosition.y, 0);
+    }
+    public void ActivateSpeedUp(float speed)
+    {
+        rig.velocity *= speed;
+        Debug.Log($"Ball Speed after SpeedUp: {rig.velocity}");
     }
 }
