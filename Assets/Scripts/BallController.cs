@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BallControl : MonoBehaviour
 {
     public Vector2 speed;
+    public Vector2 resetPosition;
     private Rigidbody2D rig;
 
-    void Start()
+    private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         rig.velocity = speed;
     }
 
-    void Update()
+    public void ResetBall()
     {
-        
+        transform.position = new Vector3(resetPosition.x, resetPosition.y, 0);
     }
 }
